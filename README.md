@@ -22,9 +22,9 @@ This fork inteds to, from the original codebase, create a typing game supporting
 You now have **10 seconds** to type out all the words displayed. For every word you type correctly, your score increases, and you also get **1 extra second**.
 
 ## 🚀 Features
-- 10 seconds to type
+- 15 seconds to type
   - Get an extra second for each word typed (small change of getting 2 seconds)
-  - Randomly get a password field to spice the game up (1/6 chance)
+  - Randomly get a password field to spice the game up (~ 1/6 chance)
   - Supports all the words in RAG and Estraviz dictionary. You can switch between both.
 - Save your highscore locally
 
@@ -37,6 +37,10 @@ Please refer to the [original repository](https://github.com/ninest/typer) for m
 
 ## ⚠️ Disclaimer
 It contains literally every word on both dictionaries so use at your own discretion with kids or anyone succeptible to curse words, etc.
+
+## 📋 To-Do
+- [ ] Load the word list in a different way to reduce the initial size
+- [ ] Improve the word filtering to remove weird or long expressions
 
 ## 📜 License
 MIT
