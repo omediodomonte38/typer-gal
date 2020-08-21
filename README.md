@@ -35,7 +35,8 @@ The only difference is the converstion of the encryption key to a environment va
 
 Please refer to the [original repository](https://github.com/ninest/typer) for more detailed instructions and information.
 
-
+## ⚠️ Disclaimer
+It contains literally every word on both dictionaries so use at you discretion with kids or anyone succeptible to curse words, etc.
 
 ## 📜 License
 MIT
