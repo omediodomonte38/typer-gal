@@ -1,39 +1,58 @@
 extends ./templates/root.pug
 
 block body
+
   main
-    h1 Typer
+    h1 Typer-GAL
+
+    button.buttonRAG#RAG(onclick='toRAG()') RAG
+    button.buttonAGAL#AGAL(onclick='toAGAL()') AGAL
+    
+
 
     .top
       div(id="start_text")
-        span Type "
-        b start
-        span " to play
+        span Escribe "
+        b empezar
+        span " para xogar
 
       div(id="current_word").noselect
 
       div(id="time") 0s
 
+
+
     input(id="text_field" type="text")
 
+ 
+
+
     div(id='score_wrapper')
-      span.var-name SCORE
+      span.var-name(id="scoreTxt") Puntuación
       span.equals =
       span(id="score").val 0
       span.semi ;
 
+
+
     .bottom
       .highscore
-        span.var-name highscore
+        span.var-name(id="hsText") Puntuación máis alta
         span.equals =
         span(id="highscore") 0
         span.semi ;
-    
+      
+
 
     footer#footer
-      a(href="help.pug") help
-      //- a(href="leaderboards.pug") scores
+      a(href="helpRAG.pug", id="helpText") Axuda
+      a.hide(href="helpAGAL.pug") Axuda
       a(href="https://github.com/ninest/typer" target="_blank") github
+      a(href="https://github.com/ninest/typer" target="_blank", id="ogGitText") github creador orixinal
+
+    sole#sole
+      span Máis en:  
+      a(href="https://aburro.me" target="_blank") aburro.me
 
 block script
   script(src="~/scripts/index.js")

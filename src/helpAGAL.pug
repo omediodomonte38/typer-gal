@@ -1,0 +1,25 @@
+extends ./templates/root.pug
+
+block body
+  main
+    h1 Ajuda
+
+    a(href="javascript:history.back()").back Voltar
+
+    article
+      h2 How to play
+      ol
+        li Escreve "começar" na caixa de texto para iniciar o jogo
+        li Tes 10 segundos para jogar, escreve as palavras o mais rápido que podas 
+        li Por cada palavra escrita corretamente consegues un segundo mais
+        li Trata de bater as túas pontuações maiores!
+
+      p Boa Sorte!.
+
+block script
+  script(src="~/scripts/index.js")
+
+block styles
+  link(rel="stylesheet", href="~/styles/index.scss")
+  link(rel="stylesheet", href="~/styles/page.scss")
+
