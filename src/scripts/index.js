@@ -14,9 +14,12 @@ const $scoreWrapper = document.getElementById('score_wrapper');
 const $score = document.getElementById('score');
 const $highscore = document.getElementById('highscore');
 const $footer = document.getElementById('footer');
+
+//buttons to change the grammar
 const $RAGButton = document.getElementById('RAG');
 const $AGALButton = document.getElementById('AGAL');
 
+//to translate the text on a button press
 const $hsText = document.getElementById('hsText');
 const $scrText = document.getElementById('scoreTxt');
 
@@ -24,20 +27,24 @@ const $scrText = document.getElementById('scoreTxt');
 const $helpText = document.getElementById('helpText');
 const $ogGitText = document.getElementById('ogGitText');
 
-
+//variables containing default value for text fields
 var $startupTxt = "empezar";
 var $globalConf = "RAG";
 
+//regex to filter especial characters like accents
 var regexFilter = /[\u00C0-\u00FF]/;
 
 
-
-
+//buttons to translate
 $RAGButton.addEventListener("click", toRAG);
 $AGALButton.addEventListener("click", toAGAL);
 
+
+//translate from reintegrata to isolata
 function toRAG() {
+
 	if ($globalConf == "AGAL"){
+
 		if (state.inGame == true){
 			endGame();
 			$time.innerText = `${gameLenght}s`;
@@ -53,16 +60,17 @@ function toRAG() {
 		$scrText.innerHTML = "Puntuación"
 		$helpText.setAttribute('href', '/helpRAG.html');
 
-		$ogGitText.innerHTML = "github creador orixinal"
+		$ogGitText.innerHTML = "Github orixinal"
 
 		$globalConf = "RAG";
 	}
 }
 
+//translate from isolata to reintegrata
 function toAGAL() {
+
 	if ($globalConf == "RAG"){
-		
-		
+
 		if (state.inGame == true){
 			endGame();
 			$time.innerText = `${gameLenght}s`;
@@ -79,7 +87,7 @@ function toAGAL() {
 		$helpText.innerHTML = "Ajuda"
 		$helpText.setAttribute('href', '/helpAGAL.html');
 
-		$ogGitText.innerHTML = "github criador original"
+		$ogGitText.innerHTML = "Github original"
 
 		$globalConf = "AGAL";
 	}
@@ -95,7 +103,7 @@ const state = {
 	score: 0,
 	isPassword: false
 };
-const gameLenght = 10;
+const gameLenght = 15;
 var interval;
 
 window.addEventListener('load', () => {
@@ -169,12 +177,14 @@ const round = (val) => {
 	state.score++;
 	$score.innerText = state.score;
 
+	//select the set of words to use depending on state
 	if ($globalConf == "AGAL"){
 		var words = wordsAGAL;
-		console.log("agal");
+		//console.log("agal");
+
 	}else{
 		var words = wordsRAG;
-		console.log("rag");
+		//console.log("rag");
 	}
 
 	// get random word
@@ -191,6 +201,7 @@ const round = (val) => {
 
 	$currentWord.innerText = state.currentWord;
 
+	// Depeding on the state display different text
 	if ($globalConf == "AGAL")
 		$textField.placeholder = `escreva "${state.currentWord}"`;
 	else
@@ -214,7 +225,9 @@ const round = (val) => {
 	// randomly, make the field a password field so users can't see what's going on
 	// 1 in 6 chance
 	const r = Math.floor(Math.random() * 6);
-	//console.log(state.currentWord,(regexFilter.test(state.currentWord)))
+
+	//as password field does not accept accents etc only allow it in the case
+	//that the word does not have them
 	if (r === 0 && !(regexFilter.test(state.currentWord))) {
 		state.isPassword = true;
 		$textField.type = 'password';
@@ -230,6 +243,7 @@ const endGame = () => {
 	// show start text and change text
 	show($startText);
 
+	//again depeding on the state display different text
 	if ($globalConf == "AGAL")
 
 		$startText.innerHTML = `
