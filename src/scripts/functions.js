@@ -1,6 +1,6 @@
-import { key } from './keys.js';
-// var CryptoJS = require('crypto-js');
 import { AES, enc } from 'crypto-js';
+
+var apiKey = process.env.cryptKey; // encryption key
 
 // saving scores locally
 export const getHighscore = () => {
