@@ -1,7 +1,7 @@
 {
-  "name": "typer",
+  "name": "typer-gal",
   "version": "1.0.0",
-  "description": "A game to see how fast you can type",
+  "description": "Un xogo de escritura en galego",
   "main": "index.js",
   "scripts": {
     "dev": "npm run clean && parcel src/index.pug",

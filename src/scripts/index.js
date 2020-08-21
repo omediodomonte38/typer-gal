@@ -37,7 +37,7 @@ $RAGButton.addEventListener("click", toRAG);
 $AGALButton.addEventListener("click", toAGAL);
 
 function toRAG() {
-	if ($globalConf == "AGAL")
+	if ($globalConf == "AGAL"){
 		if (state.inGame == true){
 			endGame();
 			$time.innerText = `${gameLenght}s`;
@@ -56,10 +56,12 @@ function toRAG() {
 		$ogGitText.innerHTML = "github creador orixinal"
 
 		$globalConf = "RAG";
+	}
 }
 
 function toAGAL() {
-	if ($globalConf == "RAG")
+	if ($globalConf == "RAG"){
+		
 		
 		if (state.inGame == true){
 			endGame();
@@ -80,6 +82,7 @@ function toAGAL() {
 		$ogGitText.innerHTML = "github criador original"
 
 		$globalConf = "AGAL";
+	}
 }
 
 
