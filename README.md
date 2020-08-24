@@ -16,7 +16,7 @@ This fork inteds to, from the original codebase, create a typing game supporting
 
 ## 🎮 How to play
 
-1. Visit [https://typer-gal.now.sh/](https://typerapp.now.sh/)
+1. Visit [https://typer-gal.now.sh/](https://typer-gal.now.sh/)
 2. To start a game, type "empezar", if you wish to do so using the RAG dictionary. If you want to use the Estraviz dictionary press the AGAL button and just type começar.
 
 You now have **10 seconds** to type out all the words displayed. For every word you type correctly, your score increases, and you also get **1 extra second**.
