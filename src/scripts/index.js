@@ -51,7 +51,7 @@ function toRAG() {
 		}
 
 		$startText.innerHTML = `
-				Escribe "<b>empezar</b>" para xogar</span>
+				Para iniciares o xogo <br> escribe "<b>empezar</b>"</span>
 			`;
 		$textField.placeholder = 'empezar';
 		$startupTxt = "empezar";
@@ -77,11 +77,11 @@ function toAGAL() {
 		}
 
 		$startText.innerHTML = `
-			Escreva "<b>começar</b>" para jogar</span>
+			Para iniciares o xogo <br> escreve "<b>começar</b>"</span>
 		`;
 		$textField.placeholder = 'começar';
 		$startupTxt = "começar";
-		$hsText.innerHTML = "Maior pontuação"
+		$hsText.innerHTML = "Pontuação mais alta"
 		$scrText.innerHTML = "Pontuação"
 
 		$helpText.innerHTML = "Ajuda"
@@ -203,7 +203,7 @@ const round = (val) => {
 
 	// Depeding on the state display different text
 	if ($globalConf == "AGAL")
-		$textField.placeholder = `escreva "${state.currentWord}"`;
+		$textField.placeholder = `escreve "${state.currentWord}"`;
 	else
 		$textField.placeholder = `escribe "${state.currentWord}"`;
 
@@ -247,11 +247,11 @@ const endGame = () => {
 	if ($globalConf == "AGAL")
 
 		$startText.innerHTML = `
-			<span class="game-over">Game over.<br><br> </span> Escreva "<b>começar</b>" para jogar novamente</span>
+			<span class="game-over">Game over.<br><br> </span> Escreve "<b>começar</b>" para jogar novamente</span>
 		`;
 	else
 			$startText.innerHTML = `
-			<span class="game-over">Game over.<br><br> </span> Escribe "<b>empezar</b>"  para xogar de novo</span>
+			<span class="game-over">Game over.<br><br> </span> Escribe "<b>empezar</b>" para xogar de novo</span>
 		`;
 
 	// set placeholder to "start" and empty textfield
