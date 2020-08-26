@@ -77,7 +77,7 @@ function toAGAL() {
 		}
 
 		$startText.innerHTML = `
-			Para iniciares o xogo <br> escreve "<b>começar</b>"</span>
+			Para iniciares o jogo <br> escreve "<b>começar</b>"</span>
 		`;
 		$textField.placeholder = 'começar';
 		$startupTxt = "começar";
